@@ -1,3 +1,3 @@
-# c++
+# C++
 
 Introduction to C++
