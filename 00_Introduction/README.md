@@ -17,3 +17,24 @@
        -> Exception handling
     4. Logic Errors     Eg. Bad representation of a problem as a program.
 </pre>
+
+## Syntax:
+Keywords, Identifiers, Operators, Punctuation
+<pre>
+    Keywords:
+    C++ has ~90 keywords.
+    short, int, long, bool
+    switch, case, break,
+    try, catch
+    if, for, do, while, goto
+    etc.
+    
+    Identifiers:
+    std, cin, cout, endl
+    
+    Operators:
+    +, <<, >>, *, /, %, ::
+
+    Punctuation:
+    ;, (), {}, "
+</pre>
