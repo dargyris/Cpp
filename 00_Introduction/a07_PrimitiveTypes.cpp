@@ -13,34 +13,34 @@ int main(){
     
     cout << "\nChars:" << endl;
     cout << "-----------------------------------" << endl;
-    cout << "char\t\t\t: " << sizeof(char) << endl;
-    cout << "char16_t\t\t: " << sizeof(char16_t) << endl;
-    cout << "char32_t\t\t: " << sizeof(char32_t) << endl;
-    cout << "wchar_t\t\t\t: " << sizeof(wchar_t) << endl;
+    cout << "char\t\t\t: " << sizeof(char) << " byte." << endl;
+    cout << "char16_t\t\t: " << sizeof(char16_t) << " bytes." << endl;
+    cout << "char32_t\t\t: " << sizeof(char32_t) << " bytes." << endl;
+    cout << "wchar_t\t\t\t: " << sizeof(wchar_t) << " bytes." << endl;
 
     cout << "\nSigned Integers:" << endl;
     cout << "-----------------------------------" << endl;
-    cout << "signed short int\t: " << sizeof(signed short int) << endl;
-    cout << "signed int\t\t: " << sizeof(signed int) << endl;
-    cout << "signed long int\t\t: " << sizeof(signed long int) << endl;
-    cout << "signed long long int\t: " << sizeof(long long int) << endl;
+    cout << "signed short int\t: " << sizeof(signed short int) << " bytes." << endl;
+    cout << "signed int\t\t: " << sizeof(signed int) << " bytes." << endl;
+    cout << "signed long int\t\t: " << sizeof(signed long int) << " bytes." << endl;
+    cout << "signed long long int\t: " << sizeof(long long int) << " bytes." << endl;
 
     cout << "\nUnsigned Integers:" << endl;
     cout << "-----------------------------------" << endl;
-    cout << "short int\t\t: " << sizeof(short int) << endl;
-    cout << "ing\t\t\t: " << sizeof(int) << endl;
-    cout << "long int\t\t: " << sizeof(long int) << endl;
-    cout << "long long int\t\t: " << sizeof(long long int) << endl;
+    cout << "short int\t\t: " << sizeof(short int) << " bytes." << endl;
+    cout << "ing\t\t\t: " << sizeof(int) << " bytes." << endl;
+    cout << "long int\t\t: " << sizeof(long int) << " bytes." << endl;
+    cout << "long long int\t\t: " << sizeof(long long int) << " bytes." << endl;
 
     cout << "\nFloating Point:" << endl;
     cout << "-----------------------------------" << endl;
-    cout << "float\t\t\t: " << sizeof(float) << endl;
-    cout << "double\t\t\t: " << sizeof(double) << endl;
-    cout << "long double\t\t: " << sizeof(long double) << endl;
+    cout << "float\t\t\t: " << sizeof(float) << " bytes." << endl;
+    cout << "double\t\t\t: " << sizeof(double) << " bytes." << endl;
+    cout << "long double\t\t: " << sizeof(long double) << " bytes." << endl;
 
     cout << "\nBooleans:\t" << endl;
     cout << "-----------------------------------" << endl;
-    cout << "bool\t\t\t: " << sizeof(bool) << endl;
+    cout << "bool\t\t\t: " << sizeof(bool) << " byte." << endl;
 
     cout << endl;   
     return 0;
