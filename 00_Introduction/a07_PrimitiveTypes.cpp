@@ -28,7 +28,7 @@ int main(){
     cout << "\nUnsigned Integers:" << endl;
     cout << "-----------------------------------" << endl;
     cout << "short int\t\t: " << sizeof(short int) << " bytes." << endl;
-    cout << "ing\t\t\t: " << sizeof(int) << " bytes." << endl;
+    cout << "int\t\t\t: " << sizeof(int) << " bytes." << endl;
     cout << "long int\t\t: " << sizeof(long int) << " bytes." << endl;
     cout << "long long int\t\t: " << sizeof(long long int) << " bytes." << endl;
 
