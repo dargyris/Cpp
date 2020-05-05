@@ -12,10 +12,9 @@ int main(){
     const int days_in_year {365};
     string title_of_the_day [days_in_year] {"Null"};
 
-    title_of_the_day [0] = "A very nice day.";
-    title_of_the_day [1] = "A sunny day!";
+    title_of_the_day [1] = "What a nice day today!";
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 10; i++) {
         cout << "Title of the day: " << title_of_the_day [i] << endl;
     }
 
@@ -34,6 +33,6 @@ int main(){
     }
 
     const int days_in_week {7};
-    string name_of_day [days_in_week] {"Null"};
+    string name_of_day [days_in_week] {"Wtf?"};
 
 }
