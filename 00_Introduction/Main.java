@@ -11,7 +11,7 @@ public class Main{
 
         int[] myArray_1 = new int[5];
         printArray(myArray_1);
-
+        System.out.println( "myArray length:" + myArray_1.length );
     }
 
     public static void printArray( int[] array ){
