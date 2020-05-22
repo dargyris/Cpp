@@ -26,8 +26,8 @@ Vectors:
     ~ myVec.size();
 
 Printing booleans toggle:
-    1. std::boolalpha;
-    2. std::noboolalpha;
+    1. cout << std::boolalpha;
+    2. cout << std::noboolalpha;
 
 Significant Digits:
     1. #include <iomanip>

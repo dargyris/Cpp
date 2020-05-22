@@ -1,31 +1,41 @@
     ~ Strings ~
-cstdlib: conversions
-    ~ 
 
-cstring
-    ~ #include <cstring>
+size_t: unsigned var type for my system
 
+        ~ C ~                        ~ C++ ~
+~ #include <cstring>    |~ #include <string>
+                        |
+1. char c[2];           |1. string s1;
+2. char c[] {"Dia"};    |2. string s2 {"Dia"};
+3. char c[10] {"Dia"};  |3. string s3 {s2};
+cstdlib: conversions    |4. string s4 {"Dia", 1};
+cctype                  |5. string s5 {s3, 0, 2};
+                        |6. string s6 (3, 'X');
+~ #include <cctype>     |
+~ isalpha(c);           |string s1;
+~ isalnum(c);           |s1 = "C++ is awsome!"
+~ isdigit(c);           |
+~ islower(c);           |string s2 {"Hi!"};
+~ isprint(c);           |s2 = s1;
+~ ispunct(c);           |
+~ isupper(c);           |.at()
+~ isspace(c);           |for(auto c: s1){...}
+                        |
+~ tolower(c);           |obj.substr(start, len)
+~ toupper(c);           |obj.erase(0,5)
+                        |obj.clear()         
+                        |obj.length()         
+===================================================
+C-Style Examples:
 
-cctype:
-    ~ #include <cctype>
-    ~ isalpha(c);
-    ~ isalnum(c);
-    ~ isdigit(c);
-    ~ islower(c);
-    ~ isprint(c);
-    ~ inspunct(c);
-    ~ isupper(c);
-    ~ isspace(c);
+1. char my_name[9];
+~ strcpy(my_name, "Dia");
+~ strcat(my_name, "mantis");
+~ cout << strlen(my_name);
+2. char my_name[] {"Dia"}; // [D][i][a][\0]
+~ strcmp("dia", "DIA")  // +14: dia after DIA
+~  my_name[3] = 'y'        // [D][i][a][y]
+3. char my_name[4] {"Dia"};// [D][i][a][\0][\0]
+
+C++ Examples:
     
-    ~ tolower(c);
-    ~ toupper(c);
-
-    ~ char my_name[8];
-    ~ strcpy(my_name, "Dia");
-    ~ strcat(my_name, "man");
-    ~ cout << strlen(my_name);
-    ~ strcmp(my_name, "Another");
-
-    1. char my_name[] {"Dia"}; // [D][i][a][\0]
-    2. my_name[3] = 'y'        // [D][i][a][y]
-    3. char my_name[4] {"Dia"};// [D][i][a][\0][\0]
