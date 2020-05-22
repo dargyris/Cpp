@@ -1,0 +1,31 @@
+    ~ Strings ~
+cstdlib: conversions
+    ~ 
+
+cstring
+    ~ #include <cstring>
+
+
+cctype:
+    ~ #include <cctype>
+    ~ isalpha(c);
+    ~ isalnum(c);
+    ~ isdigit(c);
+    ~ islower(c);
+    ~ isprint(c);
+    ~ inspunct(c);
+    ~ isupper(c);
+    ~ isspace(c);
+    
+    ~ tolower(c);
+    ~ toupper(c);
+
+    ~ char my_name[8];
+    ~ strcpy(my_name, "Dia");
+    ~ strcat(my_name, "man");
+    ~ cout << strlen(my_name);
+    ~ strcmp(my_name, "Another");
+
+    1. char my_name[] {"Dia"}; // [D][i][a][\0]
+    2. my_name[3] = 'y'        // [D][i][a][y]
+    3. char my_name[4] {"Dia"};// [D][i][a][\0][\0]
