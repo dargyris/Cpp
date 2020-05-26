@@ -1,5 +1,9 @@
 #include <iostream>
-#include <stdio.h>
-#include <cstring>
-#include <cctype>
+#include <string>
+#include <regex>
 
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+using std::regex;
