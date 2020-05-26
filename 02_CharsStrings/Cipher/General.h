@@ -4,7 +4,7 @@ void interact();
 void wait( unsigned int);
 
 void interact (){
-    std::cin.get();
+    cin.get();
 }
 
 void wait ( unsigned int time ){
@@ -12,18 +12,14 @@ void wait ( unsigned int time ){
 }
 
 char read() {
-    char choice[50] {};
-    scanf( "%s", choice);
-    if ( choice[1] != '\0' ){
+    string choice;
+    getline(cin, choice);
+    if ( choice.length() > 1 ){
         return '0';
-    } else if ( choice[0] == '1' ){
-        return '1';
-    } else if ( choice[0] == '2' ){
-        return '2';
-    } else if ( choice[0] == '3' ){
-        return '3';
-    } else if ( choice[0] == 'q' || choice[0] == 'Q' ){
+    } else if ( regex_match( choice, regex("^[qQ]")) ) {
         return 'q';
+    } else if ( regex_match( choice, regex( "^[123]")) ) {
+        return choice.at(0);
     } else {
         return '0';
     }
