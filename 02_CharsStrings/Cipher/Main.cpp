@@ -8,19 +8,19 @@
 
 int main(){
 
-    char original[128] {};
-    char encrypted[256] {};
+    string * original = new string();
+    string * encrypted = new string();
     char cipherType{'1'};
     unsigned short threeTries {3};
     bool mainFlag {true};
     do {
-        char choice = printMenu(&threeTries);
+        char choice = printMenu( &threeTries );
         switch ( choice ){
             case '1':
-                threeTries = encrypt(original, encrypted, cipherType);
+                threeTries = encrypt( original, encrypted, cipherType );
                 break;
             case '2':
-                threeTries = printAll(original, encrypted, cipherType);
+                threeTries = printAll( original, encrypted, cipherType );
                 break;
             case '3':
                 threeTries = chooseCipher( &cipherType );
