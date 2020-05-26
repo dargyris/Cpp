@@ -1,14 +1,14 @@
-unsigned short encrypt(char [], char[], char);
-void cipher( char [], char );
+unsigned short encrypt( string*, string*, char);
+void cipher( string*, char );
 void base52( char []);
 
-unsigned short encrypt(char message[], char encrypted[], char type) {
+unsigned short encrypt(string* original, string* encrypted, char type) {
     logo();
-    printf( "\n\tPlease enter your message. (Max 50 characters.)\n\t> " );
+    cout << "\n\tPlease enter your message.\n\t> ";
     fflush(stdin);
-    scanf( "%[^\n]", message );
-    strcpy( encrypted, message );
-    strcat( encrypted, message );
+    getline(cin, *original );
+    *encrypted = *original;
+    *encrypted += *original;
     cipher( encrypted, type );
 
     fflush(stdin);
@@ -16,32 +16,34 @@ unsigned short encrypt(char message[], char encrypted[], char type) {
     return 3;
 }
 
-void cipher( char msg[], char type ) {
+void cipher( string* myString, char type ) {
     switch ( type ){
         case '1':     // Swap +-1
             {
-                for( int i {0}; i<strlen(msg); i+=2 ){
-                    char temp { msg[i] };
-                    msg[i] = msg[i+1]  ;
-                    msg[i+1] = temp;
+                for( int i {0}; i<myString->length(); i+=2 ){
+                    char temp { myString->at(i) };
+                    myString[i] = myString[i+1]  ;
+                    myString[i+1] = temp;
                 }
             }
             break;
-        case '2':     // Swap Euler
-            {
-                for( int i {0}; i<(strlen(msg)/2); ++i ){
-                    char temp { msg[i] };
-                    msg[i] = msg[ strlen(msg)-1-i ];
-                    msg[ strlen(msg)-1-i ] = temp;
-                }
-            }
-            break;
-        case '3':     // To Base-24 
-            base52(msg);
-            break;
-        default:
-            printf( "Panic!" );
-            break;
+            
+//        case '2':     // Swap Euler
+//            {
+//                for( int i {0}; i<(strlen(msg)/2); ++i ){
+//                    char temp { msg[i] };
+//                    msg[i] = msg[ strlen(msg)-1-i ];
+//                    msg[ strlen(msg)-1-i ] = temp;
+//                }
+//            }
+//            break;
+//        case '3':     // To Base-24 
+//            base52(msg);
+//            break;
+//        default:
+//            printf( "Panic!" );
+//            break;
+
     }
 }
 
