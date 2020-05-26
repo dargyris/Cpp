@@ -2,7 +2,7 @@ void quit ( bool* );
 bool fail ( unsigned short* );
 
 void quit ( bool* flag ) {
-    printf( "\n\t\t~ Goodbye! ~" );
+    cout << "\n\t\t~ Goodbye! ~" << endl;
     fflush(stdout);
     *flag = false;
 }
@@ -12,7 +12,7 @@ bool fail ( unsigned short* threeTries ){
         (*threeTries) --;
         return true;
     } else {
-        printf( "\n\tToo much wrong input.\t\tQuitting..." );
+        cout << "\n\tToo much wrong input.\t\tQuitting..." << endl;
         fflush(stdout);
         return false;
     }
