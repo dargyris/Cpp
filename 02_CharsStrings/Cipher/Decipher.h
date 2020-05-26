@@ -1,75 +1,78 @@
-unsigned short printAll(char[], char[], char type);
-void print( char[] );
-void decipher( char[], char );
+unsigned short printAll( string*, string*, char );
+void print( string* );
+void decipher( string*, char );
 void debase52( char[] );
 
 
-unsigned short printAll(char original[], char encrypted[], char type) {
+unsigned short printAll( string* original, string* encrypted, char type ) {
     logo();
-    printf( "\n\t\t\t\t~ Output ~" );
-    printf( "\n\t=========================================================" );
+    cout << "\n\t\t\t\t~ Output ~" << endl;
+    cout << "\t=========================================================" << endl;
 
-    print(original);
+    print( original );
     
-    printf( "\n\t\t\t\tLength: %lu", strlen(original) );
-    printf( "\n\t=========================================================" );
+    cout << "\t\t\t\tLength: " << original->length() << endl;
+    cout << "\t=========================================================" << endl;
 
-    print(encrypted);
+    print( encrypted );
 
-    printf( "\n\t\t\t\tLength: %lu", strlen(encrypted) );
-    printf( "\n\t=========================================================" );
-    char deciphered[100]{};
-    strcpy( deciphered, encrypted );
-    decipher(deciphered, type);
+    cout << "\t\t\t\tLength: " << encrypted->length() << endl;
+    cout << "\t=========================================================" << endl;
+    string * deciphered = new string();
+    *deciphered = *encrypted;
+    decipher( deciphered, type );
 
-    print(deciphered);
+    print( deciphered );
 
-    printf( "\n\t\t\t\tLength: %lu", strlen(deciphered) );
-    printf( "\n\t=========================================================" );
+    cout << "\t\t\t\tLength: " << deciphered->length() << endl;
+    cout << "\t=========================================================" << endl;
 
-    fflush(stdin);
-    fflush(stdout);
-    std::cin.get();
+    cin.get();
 
     return 3;
 }
 
-void print ( char myString[] ){
-    printf( "\n\t{ " );
-    for( int i {0}; i<strlen(myString); ++i ){
-        printf( " %c", myString[i] );
+void print ( string* myString ){
+    if ( myString->length() == 0 ){
+        cout << "\t{ !! Empty !! }" << endl;
+    } else {
+        cout << "\n\t{ ";
+        for( int i {0}; i<myString->length(); ++i ){
+            cout << " " << myString->at(i);
+        }
+        cout << "  }\n" << endl;
     }
-    printf( "  }\n" );
 }
 
-void decipher( char myString[], char type ) {
+void decipher( string* myString, char type ) {
     switch ( type ){
         case '1':     // Swap +-1
             {
-                for( int i {0}; i<strlen(myString); i+=2 ){
-                    char temp { myString[i] };
+                for( int i {0}; i<myString->length(); i+=2 ){
+                    char temp { myString->at(i) };
                     myString[i] = myString[i+1]  ;
                     myString[i+1] = temp;
                 }
-                memset( (myString + strlen(myString)/2), '\0', strlen(myString)/2 );
             }
             break;
-        case '2':     // Swap Euler
-            {
-                for( int i {0}; i<(strlen(myString)/2); ++i ){
-                    char temp { myString[i] };
-                    myString[i] = myString[ strlen(myString)-1-i ];
-                    myString[ strlen(myString)-1-i ] = temp;
-                }
-                memset( (myString + strlen(myString)/2), '\0', strlen(myString)/2 );
-            }
-            break;
-        case '3':     // To Base-24 
-            debase52(myString);
-            break;
-        default:
-            printf( "Panic!" );
-            break;
+
+//        case '2':     // Swap Euler
+//            {
+//                for( int i {0}; i<(strlen(myString)/2); ++i ){
+//                    char temp { myString[i] };
+//                    myString[i] = myString[ strlen(myString)-1-i ];
+//                    myString[ strlen(myString)-1-i ] = temp;
+//                }
+//                memset( (myString + strlen(myString)/2), '\0', strlen(myString)/2 );
+//            }
+//            break;
+//        case '3':     // To Base-24 
+//            debase52(myString);
+//            break;
+//        default:
+//            printf( "Panic!" );
+//            break;
+
     }
 }
 
