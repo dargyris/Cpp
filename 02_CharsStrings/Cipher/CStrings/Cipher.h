@@ -8,8 +8,7 @@ unsigned short chooseCipher( char* type) {
         logo();
         printf( "\n\tChoose cypher type:\n" );
         choices(type);
-        printf( "\n\t\t\t\t*Base_52 includes special characters:" );
-        printf( "\n\t\t\t\t\' \' (Space), and '.' (Period)" );
+        printf( "\n\t\t\t\t*Base_68 includes: [a-z] [A-Z] [0-9] [ .,:!?]" );
         printf( "\n\tQ. Cancel" );
         if ( threeTries < 3){
             printf( "\n\n\t%hu/3 tries remaning", threeTries );
@@ -49,7 +48,7 @@ void choices( char* type ){
     printf( *type == '1'? "\t\t\t(NOW)": "" );
     printf( "\n\t2. Swap Euler" );
     printf( *type == '2'? "\t\t\t(NOW)": "" );
-    printf( "\n\t3. Base_52*" );
+    printf( "\n\t3. Base_68*" );
     printf( *type == '3'? "\t\t\t(NOW)": "" );
     fflush(stdout);
 }
