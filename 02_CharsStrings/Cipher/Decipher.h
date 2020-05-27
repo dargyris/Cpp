@@ -1,7 +1,7 @@
 unsigned short printAll( string*, string*, char );
 void print( string* );
 void decipher( string*, char );
-void debase66( string* );
+void debase68( string* );
 
 
 unsigned short printAll( string* original, string* encrypted, char type ) {
@@ -68,23 +68,7 @@ void decipher( string* myString, char type ) {
             break;
 
         case '3':     // To Base-66 
-            {
-            string inCode {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:!?"};
-            string outCode {" .,:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`"};
-            for( int i {0}; i<myString->length(); ++i ){
-                for( int j {0}; j<outCode.length(); ++j ){
-                    if ( myString->at(i) == outCode.at(j) ){
-                        cout << "\t\t: " << myString->at(i) << "\t> " 
-                             << outCode.at(j) << "\t--> " << inCode.at(j) << endl;
-                        wait(0.1);
-                        myString->at(i) = inCode.at(j);
-                        break;
-                    }
-                }
-            }
-            myString->erase( myString->length()/2, myString->length()/2 );
-            }
-//            debase66(myString);
+            debase68(myString);
             break;
         default:
             printf( "Panic!" );
@@ -93,19 +77,19 @@ void decipher( string* myString, char type ) {
     }
 }
 
-void debase66 ( string* myString ){
-//    string inCode {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:!?"};
-//    string outCode {" .,:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`"};
-//    for( int i {0}; i<myString->length(); ++i ){
-//        for( int j {0}; j<myString->length(); ++j ){
-//            if ( myString->at(i) == outCode.at(j) ){
-//                cout << "\t\t: " << myString->at(i) << "\t> " 
-//                     << outCode.at(j) << "\t--> " << inCode.at(j) << endl;
-//                wait(0.5);
-//                myString->at(i) = inCode.at(j);
-//                break;
-//            }
-//        }
-//    }
-//    myString->erase( myString->length()/2, myString->length()/2 );
+void debase68 ( string* myString ){
+    string inCode {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:!?"};
+    string outCode {" .,:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`"};
+    for( int i {0}; i<myString->length(); ++i ){
+        for( int j {0}; j<outCode.length(); ++j ){
+            if ( myString->at(i) == outCode.at(j) ){
+                cout << "\t\t: " << myString->at(i) << "\t> " 
+                     << outCode.at(j) << "\t--> " << inCode.at(j) << endl;
+                wait(0.1);
+                myString->at(i) = inCode.at(j);
+                break;
+            }
+        }
+    }
+    myString->erase( myString->length()/2, myString->length()/2 );
 }
