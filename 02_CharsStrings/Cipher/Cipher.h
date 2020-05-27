@@ -8,8 +8,7 @@ unsigned short chooseCipher( char* type) {
         logo();
         cout << "\n\tChoose cypher type:" << endl;
         choices( *type );
-        cout << "\t\t\t\t*Base_52 includes special characters:" << endl;
-        cout << "\t\t\t\t\' \' (Space), and '.' (Period)" << endl;
+        cout << "\t\t\t\t*Base_68 includes: [a-z] [A-Z] [0-9] [ .,:!?]" << endl;
         cout << "\tQ. Cancel" << endl;
         if ( threeTries < 3){
             cout << "\n\t/3 tries remaning" << threeTries << endl;
@@ -49,7 +48,7 @@ void choices( char type ){
     cout << (type == '1'? "\t\t\t(NOW)\n": "\n");
     cout << "\t2. Swap Euler";
     cout << (type == '2'? "\t\t\t(NOW)\n": "\n");
-    cout << "\t3. Base_66*";
+    cout << "\t3. Base_68*";
     cout << (type == '3'? "\t\t\t(NOW)\n": "\n");
     fflush(stdout);
 }
