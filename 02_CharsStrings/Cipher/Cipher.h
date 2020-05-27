@@ -1,27 +1,27 @@
 unsigned short chooseCipher( char* );
-void choices( char * );
+void choices( char );
 
 unsigned short chooseCipher( char* type) {
     unsigned short int threeTries {3};
     bool mainFlag = true;
     do {
         logo();
-        printf( "\n\tChoose cypher type:\n" );
-        choices(type);
-        printf( "\n\t\t\t\t*Base_52 includes special characters:" );
-        printf( "\n\t\t\t\t\' \' (Space), and '.' (Period)" );
-        printf( "\n\tQ. Cancel" );
+        cout << "\n\tChoose cypher type:" << endl;
+        choices( *type );
+        cout << "\t\t\t\t*Base_52 includes special characters:" << endl;
+        cout << "\t\t\t\t\' \' (Space), and '.' (Period)" << endl;
+        cout << "\tQ. Cancel" << endl;
         if ( threeTries < 3){
-            printf( "\n\n\t%hu/3 tries remaning", threeTries );
+            cout << "\n\t/3 tries remaning" << threeTries << endl;
         }
-        printf( "\n\n\t> " );
+        cout << "\n\t> ";
         char tmp{ read() };
         switch ( tmp ){
             case '1': case '2': case '3':
                 (*type) = tmp;
                 logo();
-                printf( "\n\n" );
-                choices(type);
+                cout << endl;
+                choices( *type );
                 wait(1);
                 mainFlag = false;
                 break;
@@ -37,19 +37,19 @@ unsigned short chooseCipher( char* type) {
                     break;
                 }
             default:
-                printf( "Panic!" );
+                cout << "Panic!" << endl;
                 break;
         }
     } while ( mainFlag );
     return 3;
 }
 
-void choices( char* type ){
-    printf( "\n\t1. Swap +- 1" );
-    printf( *type == '1'? "\t\t\t(NOW)": "" );
-    printf( "\n\t2. Swap Euler" );
-    printf( *type == '2'? "\t\t\t(NOW)": "" );
-    printf( "\n\t3. Base_52*" );
-    printf( *type == '3'? "\t\t\t(NOW)": "" );
+void choices( char type ){
+    cout << "\n\t1. Swap +- 1";
+    cout << (type == '1'? "\t\t\t(NOW)\n": "\n");
+    cout << "\t2. Swap Euler";
+    cout << (type == '2'? "\t\t\t(NOW)\n": "\n");
+    cout << "\t3. Base_66*";
+    cout << (type == '3'? "\t\t\t(NOW)\n": "\n");
     fflush(stdout);
 }
