@@ -1,13 +1,13 @@
 #include <unistd.h>
 
 void interact();
-void wait( unsigned int);
+void wait( double );
 
 void interact (){
     cin.get();
 }
 
-void wait ( unsigned int time ){
+void wait ( double time ){
     usleep(time*1000000);
 }
 
