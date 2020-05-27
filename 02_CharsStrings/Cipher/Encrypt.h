@@ -1,6 +1,6 @@
 unsigned short encrypt( string*, string*, char);
 void cipher( string*, char );
-void base66( string* );
+void base68( string* );
 
 unsigned short encrypt(string* original, string* encrypted, char type) {
     logo();
@@ -38,7 +38,7 @@ void cipher( string* myString, char type ) {
             break;
 
         case '3':     // Base-66 
-            base66(myString);
+            base68(myString);
             break;
         default:
             printf( "Panic!" );
@@ -47,7 +47,7 @@ void cipher( string* myString, char type ) {
     }
 }
 
-void base66 ( string* myString ){
+void base68 ( string* myString ){
     string inCode {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:!?"};
     string outCode {" .,:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`"};
     for( int i {0}; i<myString->length(); ++i ){
