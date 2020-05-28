@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip> =
+#include <iomanip>
 
 using std::cout;
 using std::cin;
