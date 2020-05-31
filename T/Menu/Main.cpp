@@ -1,7 +1,7 @@
 #include "Include.h"
 #include "Utils.cpp"
 #include "Menu.cpp"
-#include "Func.cpp"
+#include "Funct.cpp"
 
 int main(){
     system ( "clear" );
