@@ -1,9 +1,10 @@
 void logo();            // Prints logo ascii art
-char read();            // Returns char a-zA-Z0-9
-                        // 0 is wrong input
+char read();            // Legal choices: 1-9
+                        // Wrong input -> 0
                         // qQ become Q: Quit
+                        
 void interact();        // Waits for user input + Enter
-void wait( double );    // Waits 1 second
+void wait( double );    // Waits <double> seconds
 bool quit();            // Prints Goodbye, sets mainFlag = false
 bool fail( unsigned short* ); // If tries > 1, tries--, returns true
                               // else, "Too much wrong input!"
@@ -33,7 +34,7 @@ char read(){
         return '0';
     } else if ( regex_match( choice, regex("^[qQ]") ) ){
         return 'Q';
-    } else if ( regex_match( choice, regex("^[0-9]") ) ){
+    } else if ( regex_match( choice, regex("^[1-9]") ) ){
         return choice.at(0);
     } else {
         return '0';
