@@ -19,9 +19,10 @@ int main(){
     cin >> base_cost;
     cout << "\nTax rate: ";
     cin >> tax_rate;
-    cout << "Base shipping: ";
+    cout << "\nBase shipping: ";
     cin >> base_shipping;
 
+    cout << calc_cost( base_cost, tax_rate, base_shipping ) << endl;
     
 
     fflush(stdin);
