@@ -10,6 +10,10 @@ double calc_cost( double base_cost, double tax_rate, double shipping );
 int main(){
     system("clear");
 
+    double base_cost {};
+    double tax_rate {};
+    double base_shipping {};
+
     cout << "Welcome!" << endl;
     cout << "Base cost: ";
     cin >> base_cost;
