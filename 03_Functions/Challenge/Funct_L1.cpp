@@ -1,8 +1,6 @@
 unsigned short handlePrint( const vector<int> );
-void print( const vector<int> );
 unsigned short add( vector<int> );
 unsigned short mean( const vector<int> );
-double calculate_mean ( const vector<int> );
 unsigned short min( vector<int> );
 unsigned short max( vector<int> );
 
@@ -13,14 +11,6 @@ unsigned short handlePrint( const vector<int> &num ){
         print(num);
     }
     return 3;   // Legal choice, restores threeTries to 3
-}
-
-void print( const vector<int> &num ){
-    cout << "{ ";
-    for ( auto v: num ){
-        cout << v << " ";
-    }
-    cout << "}" << endl;
 }
 
 unsigned short add( vector<int> &num ){
@@ -39,10 +29,6 @@ unsigned short mean( const vector<int> &num ){
         cout << "Mean\t: " << calculate_mean( num ) << endl;
     }
     return 3;   // Legal choice, restores threeTries to 3
-}
-
-void calculate_mean (  ){
-    
 }
 
 unsigned short min( vector<int> num ){
