@@ -14,15 +14,13 @@ void logo(){
 
     system ( "clear" );
     cout << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
-    cout << "\tLogoLogoLogoLogoLogoLogoLogoLogoLogoLogo" << endl;
+    cout << "                                      _            " << endl;
+    cout << "                                     (_)           " << endl;
+    cout << "     _ __ ____  __  __  __  _ __ ___  _ _ ___       " << endl;
+    cout << "    | '_ ` _  \\/ _` \\ \\/ / | '_ ` _ \\| | '_  \\ " << endl; 
+    cout << "    | | | | | | (_| |>  <  | | | | | | | | | |     " << endl;
+    cout << "    |_| |_| |_|\\__,_/_/\\_\\ |_| |_| |_|_|_| |_|  " << endl;
     cout << endl;
-
 }
 
 char read(){
