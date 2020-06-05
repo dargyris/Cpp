@@ -2,7 +2,6 @@
 #include "Utils.cpp"
 #include "Menu.cpp"
 #include "Funct_L1.cpp"
-#include "Funct_L2.cpp"
 
 int main(){
     system ( "clear" );
@@ -19,7 +18,7 @@ int main(){
                 threeTries = handlePrint( number );
                 break;
             case '2':
-                threeTries = handleAdd( number );
+                threeTries = add( number );
                 break;
             case '3':
                 threeTries = mean( number );
@@ -29,6 +28,9 @@ int main(){
                 break;
             case '5':
                 threeTries = max( number );
+                break;
+            case '6':
+                threeTries = handleFind( number );
                 break;
             case 'Q':
                 mainFlag = quit();
