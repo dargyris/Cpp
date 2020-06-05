@@ -1,54 +1,50 @@
-unsigned short handlePrint( const vector<int> );
-void print( const vector<int> );
-unsigned short add( vector<int> );
-unsigned short mean( const vector<int> );
-double calculate_mean ( const vector<int> );
-unsigned short min( vector<int> );
-unsigned short max( vector<int> );
+void print( const vector<int> &vec );
+double calculate_mean ( const vector<int> &vec );
+int get_min ( const vector<int> &vec );
+int get_max ( const vector<int> &vec );
+bool find( const vector<int> &vec, int target );
 
-unsigned short handlePrint( const vector<int> &num ){
-    if ( num.size() == 0 ){
-        cout << "[]: Empty list." << endl;
-    } else {
-        print(num);
-    }
-    return 3;   // Legal choice, restores threeTries to 3
-}
-
-void print( const vector<int> &num ){
-    cout << "{ ";
-    for ( auto v: num ){
-        cout << v << " ";
+void print( const vector<int> &vec ){
+    cout << "\n\t{ ";
+    for ( auto num: vec ){
+        cout << num << " ";
     }
     cout << "}" << endl;
 }
 
-unsigned short add( vector<int> &num ){
-    int num_to_add {};
-    cout << "Enter int to add > ";
-    cin >> num_to_add;
-    num.push_back( num_to_add );
-    cout << num_to_add << " added." << endl;
-    return 3;   // Legal choice, restores threeTries to 3
-}
-
-unsigned short mean( const vector<int> &num ){
-    if ( num.size() == 0 ){
-        cout << "[]: Empty list." << endl;
-    } else {
-        cout << "Mean\t: " << calculate_mean( num ) << endl;
+double calculate_mean ( const vector<int> &vec ){
+    int total {};
+    for ( auto num: vec ){
+        total += num;
     }
-    return 3;   // Legal choice, restores threeTries to 3
+    return static_cast<double>(total)/vec.size();
 }
 
-void calculate_mean (  ){
-    
+int get_min ( const vector<int> &vec ){
+    int min { vec.at(0) };
+    for ( auto num: vec ){
+        if ( num < min ){
+            min = num;
+        }
+    }
+    return min;
 }
 
-unsigned short min( vector<int> num ){
-    return 3;   // Legal choice, restores threeTries to 3
+int get_max ( const vector<int> &vec ){
+    int max {vec.at(0)};
+    for ( auto num: vec ){
+        if ( num > max ){
+            max = num;
+        }
+    }
+    return max;
 }
 
-unsigned short max( vector<int> num ){
-    return 3;   // Legal choice, restores threeTries to 3
+bool find( const vector<int> &vec, int target ){
+    for ( auto num: vec ){
+        if ( num == target ){
+            return true;
+        }
+    }
+    return false;
 }
