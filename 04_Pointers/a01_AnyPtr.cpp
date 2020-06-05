@@ -5,7 +5,7 @@ using std::cin;
 using std::endl;
 
 int main(){
-    system ( "clear" );
+//    system ( "clear" );
 
     short int* ptrA;
     short int* ptrB;
