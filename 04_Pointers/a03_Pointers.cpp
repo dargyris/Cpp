@@ -27,10 +27,3 @@ int main(){
     return 0;
 }
 
-Some text(text) here
-Some text(text) here
-Some text(text) here
-Some text ( text ) here
-
-Some text here
-
