@@ -20,6 +20,18 @@ int main(){
     int b {*A};
     cout << "\tb{*A}\t" << b << "\t\t" << &b << "\t"
          << typeid(a).name() << "\t" << sizeof(b) << endl;
+
+    int c {10};
+    cout << "\tc{5}\t" << c << "\t\t" << &c << "\t" 
+         << typeid(c).name() << "\t" << sizeof(c) << endl;
+
+    int *B {&c};
+    cout << "\tB{&a}\t" << B << "\t" << &B << "\t"
+         << typeid(B).name() << "\t" << sizeof(B) << endl;
+
+    int d {*B};
+    cout << "\td{*B}\t" << d << "\t\t" << &d << "\t"
+         << typeid(c).name() << "\t" << sizeof(d) << endl;
     
 
     fflush ( stdin );
